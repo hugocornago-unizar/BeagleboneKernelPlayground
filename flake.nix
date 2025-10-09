@@ -17,8 +17,9 @@
 				};
 			in
 			{
-				packages.kernel = pkgs.callPackage ./nix/packages/kernel.nix {};
-				packages.uboot = pkgs.callPackage ./nix/packages/uboot.nix { pkgsCross = pkgsCross; };
+				packages.kernel = pkgs.callPackage ./nix/kernel.nix {};
+				packages.uboot = pkgs.callPackage ./nix/uboot.nix { pkgsCross = pkgsCross; };
+				packages.flash-utils = pkgs.callPackage ./nix/scripts/package.nix {};
 
 				devShells.default = pkgs.mkShell {
 					buildInputs = with pkgs;
@@ -31,7 +32,7 @@
 						]
 						++ pkgs.linux.nativeBuildInputs;
 
-						packages = [ config.packages.uboot ];
+						packages = [ config.packages.uboot config.packages.flash-utils ];
 						shellHook = ''
 										export ARCH=arm
 										export hardeningDisable=all
