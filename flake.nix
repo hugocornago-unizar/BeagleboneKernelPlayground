@@ -44,6 +44,7 @@
 										 cp -r ${config.packages.kernel} kernel
 										 chmod -R +w kernel
 										}
+										ln -fs ${config.packages.uboot}/MLO MLO
 										exec zsh
 						'';
 				};
