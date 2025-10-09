@@ -6,8 +6,8 @@ DEVICE=$1
 prompt_warning() {
 	echo "This program will erase all the data inside $DEVICE"
 	read -p "Continue? (y/n)" prompt
-	case prompt in
-		[yY]* [sS]*)
+	case $prompt in
+		[yY]* | [sS]*)
 			;;
 		*)
 			echo "Aborting..."
@@ -16,8 +16,8 @@ prompt_warning() {
 	esac
 }
 
-[[ -z $1 ]] || {
-	echo "usage: flashkernel <sd card device (/dev/sdX)> <idk>"
+[[ -z $1 ]] && {
+	echo "usage: flashkernel <sd card device (/dev/sdX)>"
 	echo "options:"
 	echo -e "\t -f, --full: remove all contents from the device and install a bootloader and busybox."
 	echo -e "\t -b, --build: build the kernel before flashing."
