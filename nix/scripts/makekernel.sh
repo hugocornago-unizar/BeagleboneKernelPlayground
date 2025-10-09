@@ -7,11 +7,11 @@ JOBS=$(nproc)
 
 
 case $BOARD in 
-	"BB" "BEAGLEBONE" "BONE")
-		TARGET="ti/omap/am335x‐bone.dtb"
+	"BB" | "BEAGLEBONE" | "BONE")
+		TARGET="ti/omap/am335x-bone.dtb"
 		;;
-	"BBB" "BLACK" "BEAGLEBONE BLACK" "BEAGLEBONEBLACK" "BONEBLACK")
-		TARGET="ti/omap/am335x‐boneblack.dtb"
+	"BBB" | "BLACK" | "BEAGLEBONE BLACK" | "BEAGLEBONEBLACK" | "BONEBLACK")
+		TARGET="ti/omap/am335x-boneblack.dtb"
 		;;
 	"")
 		echo "usage: makekernel <board>"
@@ -50,5 +50,5 @@ make -j$JOBS zImage
 make -j$JOBS $TARGET
 make -j$JOBS modules
 
-mkdir rootfs
+mkdir -p rootfs
 make -j$JOBS INSTALL_MOD_PATH=$PWD/rootfs modules_install

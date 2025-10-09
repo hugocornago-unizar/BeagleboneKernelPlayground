@@ -19,7 +19,7 @@ pkgs.stdenv.mkDerivation(finalAttrs: {
 	# 	destination = "/bin/flashkernel";
 	# };
 
-	phases = ["installPhase"];
+	phases = ["unpackPhase" "installPhase"];
 	installPhase = ''
 		mkdir -p $out/bin
 		cp makekernel.sh $out/bin/makekernel
