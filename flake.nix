@@ -6,7 +6,7 @@
       "https://cache.cornago.net"
     ];
     extra-trusted-public-keys = [
-      "default:JbBZvt2459iugsj7kOt9AqzIqW0ugdpHV1xQH6qHEJg="
+      "cache:Zmntlu1k2L4u4wbdF4FLIfjsjs4/QkVYch2Tt7/ZGQ8="
     ];
   };
 
