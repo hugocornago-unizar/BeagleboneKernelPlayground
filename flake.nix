@@ -1,14 +1,14 @@
 {
   description = "Beaglebone Kernel Playground";
 
-	nixConfig = {
-			extra-substituters = [
+  nixConfig = {
+    extra-substituters = [
       "https://cache.cornago.net"
     ];
     extra-trusted-public-keys = [
       "default:JbBZvt2459iugsj7kOt9AqzIqW0ugdpHV1xQH6qHEJg="
     ];
-	};
+  };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
