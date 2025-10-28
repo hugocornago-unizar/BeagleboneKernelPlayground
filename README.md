@@ -14,6 +14,7 @@ which is usually the case when compiling to embedded systems.
 In order to generate code for another architecture, it is required to use the compiler of the target architecture.
 
 > So it's just a simple `apt install gcc-arm` right?
+
 Unfortunally, the majority of packet distributors don't package compilers for the porpuse of cross-compiling,
 mainly due to the giant diversity of possible architectures and configurations.
 
@@ -32,6 +33,7 @@ Also, for any dynamic library you would want to use, you will need to get the so
 and hope nothing breaks. This becomes especially hard when compiling big projects such as openssl, and are in general, great time sinks.
 
 > So, it's all hope lost? 
+
 No, there is actually a way to distribute reproducable developer environtments, containing all the required compilers and dependencies, in their
 required architecture, for almost any popular `host` architecture.
 
@@ -45,14 +47,15 @@ would give you an incredible feature, complete reproducibility anywhere Nix is s
 If you already have nix installed on your machine, skip to `How to use?`.
 
 Note: 
-If you are on MacOS, it is preferable to use the official image installer.
+If you are on MacOS, it is preferable to use the [official image installer](https://install.determinate.systems/determinate-pkg/stable/Universal).
 
 You can install Nix in any Linux, darwin (MacOS), or in Windows via WSL.
 Simply run the following command:
 ```
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
 ```
 
-You can learn more about the nix installer and instructions on how to uninstall it here.
+You can learn more about the nix installer and instructions on how to uninstall it [here](https://github.com/DeterminateSystems/nix-installer).
 
 As explained in `Motivation`, you need to compile the compiler for the target architecture.
 This is not a quick compilation, i.e. it took my laptop about ~15 minutes.
