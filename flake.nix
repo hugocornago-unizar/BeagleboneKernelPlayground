@@ -53,7 +53,8 @@
              cp -r ${config.packages.kernel} kernel
              chmod -R +w kernel
             }
-            ln -fs ${config.packages.uboot}/MLO MLO
+						cp -r ${config.packages.uboot} bootloader
+						chmod -R +w bootloader
             exec zsh
           '';
         };

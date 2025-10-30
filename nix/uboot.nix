@@ -38,7 +38,7 @@ pkgs.stdenv.mkDerivation (finalAttrs: {
     runHook preInstall
 
     mkdir -p $out
-    cp MLO $out
+    cp -r * $out
 
     runHook postInstall
   '';
